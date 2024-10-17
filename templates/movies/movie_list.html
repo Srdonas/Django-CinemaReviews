@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block title %}Movie List{% endblock %}
+
+{% block content %}
+<div class="container mt-5 p-3">
+    <div class="row row-cols-1 row-cols-md-3 g-5">
+        {% for movie in page_obj %}
+        <div class="col">
+            <div id="movie-card" class="card h-100 d-flex flex-column">
+                {% if movie.image %}
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#modal-{{ movie.id }}">
+                        <img id="image-card" src="{{ movie.image.url }}" class="card-img-top" alt="{{ movie.title }}">
+                    </a>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="modal-{{ movie.id }}" tabindex="-1" 
+                         aria-labelledby="modalLabel{{ movie.id }}" aria-hidden="true">
+                        <div class="modal-dialog modal-xl modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalLabel{{ movie.id }}">{{ movie.title }}</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" 
+                                            aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body d-flex justify-content-center">
+                                    <img src="{{ movie.image.url }}" class="modal-image" alt="{{ movie.title }}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+                <div class="card-body flex-grow-1">
+                    <h5 class="card-title">{{ movie.title }}</h5>
+                    <p class="card-text">{{ movie.description }}</p>
+                </div>
+                <div class="card-footer mt-auto">
+                    <a href="{% url 'movie_detail' movie.id %}" class="btn btn-warning btn-sm">View Reviews</a>
+                    {% if user.is_authenticated %}
+
+                    <a href="{% url 'update_movie' movie.id %}?page={{ request.GET.page }}" class="btn btn-info btn-sm">
+                        <span class="material-icons">edit</span>
+                    </a>
+                    <form action="{% url 'delete_movie' movie.id %}?page={{ request.GET.page }}" method="POST" style="display:inline;">
+                        {% csrf_token %}
+                        {% comment %} Seguro que quieres {% endcomment %}
+                        <button class="btn btn-danger">
+                            <span class="material-icons">delete_forever</span>
+                        </button>
+                    </form>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="text-center">
+            <p>No movies available.</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Pagination Controls -->
+    <div class="pagination mt-4 justify-content-center ">
+        <nav>
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page=1">&laquo; First</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                </li>
+                {% endif %}
+
+                <li class="page-item disabled">
+                    <span class="page-link">
+                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                    </span>
+                </li>
+
+                {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+</div>
+{% endblock %}

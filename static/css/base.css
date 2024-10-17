@@ -1,0 +1,56 @@
+#base-nav {
+    background-color: #003668 !important; /* Example Hex */
+  }
+
+#base-nav-brand-name{
+    color: #FFFFFF; /* Text color */
+    font-weight: bold; /* Bold text */
+}
+#base-footer{
+    background-color: #003668 !important; /* Example Hex */
+    color: #FFFFFF; /* Text color */
+    
+}
+
+/* Background color for the entire page */
+body {
+    background-color: #0b1526; /* Light background color */
+    min-height: 100vh; /* Ensure body fills the entire screen */
+    display: flex;
+    flex-direction: column;
+}
+.card{
+    color: #000000; /* Text color */
+}
+.card-title{
+    color: #1f1f26; /* Text color */
+    font-weight: bold; /* Bold text */
+}
+.card-text{
+    color: #444444; /* Text color */
+}
+
+p,h1,h2,h3,h4,h5,h6,label{
+    color: #FFFFFF; /* Text color */
+}
+#image-card{
+    width: flex;
+    height: 50px;
+    object-fit: cover;
+ }
+
+ /* Modal Image Styling */
+.modal-image {
+    max-height: 80vh;
+    object-fit: contain;
+    width: auto;
+}
+
+/* Card Image Hover Effect */
+#movie-card img {
+    transition: transform 0.3s ease-in-out;
+}
+
+#movie-card img:hover {
+    transform: scale(1.05);
+}

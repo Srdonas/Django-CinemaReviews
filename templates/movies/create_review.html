@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Review for {{ movie.title }}{% endblock %}
+
+{% block content %}
+<h1>Add Review for {{ movie.title }}</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="title" class="form-label">{{ form.autor.label }}</label>
+        {{ form.autor }}
+    </div>
+
+    <div class="mb-3">
+        <label for="rating" class="form-label">{{ form.rating.label }}</label>
+        {{ form.rating }}
+    </div>
+
+    <div class="mb-3">
+        <label for="comments" class="form-label">{{ form.comments.label }}</label>
+        {{ form.comments }}
+    </div>
+
+    <button type="submit" class="btn btn-success">Save Review</button>
+</form>
+
+<!-- Back to Movie Details Link -->
+ <div class="d-flex justify-content-end">
+    <a class="btn btn-primary" href="{% url 'movie_detail' movie.id %}">Back to Movie Details</a>
+</div>
+{% endblock %}

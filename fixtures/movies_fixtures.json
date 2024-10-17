@@ -1,0 +1,202 @@
+[
+    {
+      "model": "movies.movie",
+      "pk": 1,
+      "fields": {
+        "title": "The Shawshank Redemption",
+        "description": "A story of hope and friendship in a prison.",
+        "release_date": "1994-09-23",
+        "genre": "Drama"
+      }
+    },
+    {
+      "model": "movies.movie",
+      "pk": 2,
+      "fields": {
+        "title": "The Godfather",
+        "description": "The aging patriarch of an organized crime dynasty transfers control to his reluctant son.",
+        "release_date": "1972-03-24",
+        "genre": "Crime"
+      }
+    },
+    {
+      "model": "movies.movie",
+      "pk": 3,
+      "fields": {
+        "title": "The Dark Knight",
+        "description": "Batman faces the Joker, a criminal mastermind wreaking havoc on Gotham.",
+        "release_date": "2008-07-18",
+        "genre": "Action"
+      }
+    },
+    {
+      "model": "movies.movie",
+      "pk": 4,
+      "fields": {
+        "title": "Pulp Fiction",
+        "description": "A series of intertwined stories in the criminal underworld.",
+        "release_date": "1994-10-14",
+        "genre": "Crime"
+      }
+    },
+    {
+      "model": "movies.movie",
+      "pk": 5,
+      "fields": {
+        "title": "Schindler's List",
+        "description": "The story of Oskar Schindler, who saved Jews during the Holocaust.",
+        "release_date": "1993-12-15",
+        "genre": "Biography"
+      }
+    },
+    {
+      "model": "movies.movie",
+      "pk": 6,
+      "fields": {
+        "title": "Inception",
+        "description": "A thief who steals corporate secrets through dream-sharing technology.",
+        "release_date": "2010-07-16",
+        "genre": "Sci-Fi"
+      }
+    },
+    {
+      "model": "movies.movie",
+      "pk": 7,
+      "fields": {
+        "title": "Fight Club",
+        "description": "An insomniac office worker forms an underground fight club.",
+        "release_date": "1999-10-15",
+        "genre": "Drama"
+      }
+    },
+    {
+      "model": "movies.movie",
+      "pk": 8,
+      "fields": {
+        "title": "Forrest Gump",
+        "description": "A man with low intelligence witnesses key moments in American history.",
+        "release_date": "1994-07-06",
+        "genre": "Romance"
+      }
+    },
+    {
+      "model": "movies.movie",
+      "pk": 9,
+      "fields": {
+        "title": "The Matrix",
+        "description": "A computer hacker learns the truth about his reality.",
+        "release_date": "1999-03-31",
+        "genre": "Sci-Fi"
+      }
+    },
+    {
+      "model": "movies.movie",
+      "pk": 10,
+      "fields": {
+        "title": "The Lord of the Rings: The Fellowship of the Ring",
+        "description": "A hobbit embarks on a journey to destroy a powerful ring.",
+        "release_date": "2001-12-19",
+        "genre": "Fantasy"
+      }
+    },
+    {
+      "model": "movies.movie",
+      "pk": 11,
+      "fields": {
+        "title": "Star Wars: A New Hope",
+        "description": "A farm boy becomes a hero in a battle against the Galactic Empire.",
+        "release_date": "1977-05-25",
+        "genre": "Sci-Fi"
+      }
+    },
+    {
+      "model": "movies.movie",
+      "pk": 12,
+      "fields": {
+        "title": "Interstellar",
+        "description": "Explorers travel through a wormhole in search of a new home for humanity.",
+        "release_date": "2014-11-07",
+        "genre": "Adventure"
+      }
+    },
+    {
+      "model": "movies.movie",
+      "pk": 13,
+      "fields": {
+        "title": "The Lion King",
+        "description": "A young lion prince flees his kingdom after the murder of his father.",
+        "release_date": "1994-06-15",
+        "genre": "Animation"
+      }
+    },
+    {
+      "model": "movies.movie",
+      "pk": 14,
+      "fields": {
+        "title": "Gladiator",
+        "description": "A betrayed Roman general seeks revenge against the emperor.",
+        "release_date": "2000-05-05",
+        "genre": "Action"
+      }
+    },
+    {
+      "model": "movies.movie",
+      "pk": 15,
+      "fields": {
+        "title": "The Departed",
+        "description": "An undercover cop and a mole in the police try to identify each other.",
+        "release_date": "2006-10-06",
+        "genre": "Crime"
+      }
+    },
+    {
+      "model": "movies.movie",
+      "pk": 16,
+      "fields": {
+        "title": "The Silence of the Lambs",
+        "description": "A young FBI trainee seeks the help of a cannibalistic psychiatrist.",
+        "release_date": "1991-02-14",
+        "genre": "Thriller"
+      }
+    },
+    {
+      "model": "movies.movie",
+      "pk": 17,
+      "fields": {
+        "title": "Se7en",
+        "description": "Two detectives hunt a serial killer using the seven deadly sins.",
+        "release_date": "1995-09-22",
+        "genre": "Crime"
+      }
+    },
+    {
+      "model": "movies.movie",
+      "pk": 18,
+      "fields": {
+        "title": "Saving Private Ryan",
+        "description": "During WWII, a group of soldiers search for a missing paratrooper.",
+        "release_date": "1998-07-24",
+        "genre": "War"
+      }
+    },
+    {
+      "model": "movies.movie",
+      "pk": 19,
+      "fields": {
+        "title": "The Green Mile",
+        "description": "A death row inmate possesses a mysterious healing power.",
+        "release_date": "1999-12-10",
+        "genre": "Drama"
+      }
+    },
+    {
+      "model": "movies.movie",
+      "pk": 20,
+      "fields": {
+        "title": "Braveheart",
+        "description": "A Scottish warrior leads a rebellion against English rule.",
+        "release_date": "1995-05-24",
+        "genre": "History"
+      }
+    }
+  ]  

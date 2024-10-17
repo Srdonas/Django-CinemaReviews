@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Add New Movie{% endblock %}
+
+{% block content %}
+<h1>Add New Movie</h1>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    <div class="mb-3">
+        <label for="title" class="form-label">{{ form.title.label }}</label>
+        {{ form.title }}
+        
+    </div>
+
+    <div class="mb-3">
+        <label for="description" class="form-label">{{ form.description.label }}</label>
+        {{ form.description }}
+    </div>
+
+    <div class="mb-3">
+        <label for="release_date" class="form-label">{{ form.release_date.label }}</label>
+        {{ form.release_date }}
+    </div>
+
+    <div class="mb-3">
+        <label for="genre" class="form-label">{{ form.genre.label }}</label>
+        {{ form.genre}}
+    </div>
+
+    <div class="mb-3">
+        <label for="image" class="form-label">{{ form.image.label }}</label>
+        {{ form.image }}
+    </div>
+
+    <button type="submit" class="btn btn-success">Save Movie</button>
+</form>
+<div class="d-flex justify-content-end">
+    <a href="{% url 'list_movies' %}" class="btn btn-secondary mt-3">Back to Movie List</a>
+</div>
+
+{% endblock %}
