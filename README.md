@@ -1,5 +1,5 @@
-# Django-CinemaReviews
-🎬 Cinema Reviews App
+# 🎬 Cinema Reviews App
+
 A Django-based movie management system where users can add, update, view, and delete movies. It also supports managing reviews for each movie with pagination, Bootstrap styling, and Material Icons integration.
 
 Features
@@ -19,7 +19,7 @@ Clone the repository:
 
 bash
 Copiar código
-git clone https://github.com/yourusername/cinema-reviews-app.git
+git clone https://github.com/Srdonas/Django-CinemaReviews.git
 cd cinema-reviews-app
 Create a virtual environment (recommended):
 
@@ -109,6 +109,7 @@ cinema-reviews-app/
 ├── manage.py           # Django management script
 ├── requirements.txt    # Python dependencies
 └── README.md           # Documentation (this file)
+
 Usage
 Access the app:
 Visit http://127.0.0.1:8000 in your browser.

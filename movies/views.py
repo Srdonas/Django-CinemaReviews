@@ -3,14 +3,14 @@ from .forms import MovieForm, ReviewForm
 from .models import Movie, Review
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
-from django.urls import reverse
+from django.http import JsonResponse
 
 
 
 # Vista para mostrar todas las películas
 def list_movies(request):
     movies = Movie.objects.all()
-    paginator = Paginator(movies, 9) 
+    paginator = Paginator(movies, 6) 
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
@@ -72,33 +72,16 @@ def update_movie(request, movie_id):
 @login_required
 def delete_movie(request, movie_id):
     movie = get_object_or_404(Movie, id=movie_id)
-    current_page = request.GET.get('page', 1)
-
-    if request.method == 'POST':
+    if request.method == "DELETE":
         movie.delete()
-
-    url = reverse('list_movies')
-    return redirect(f'{url}?page={current_page}')
-
-# Actualizar una reseña existente
-# @login_required
-# def update_review(request, review_id):
-#     review = get_object_or_404(Review, id=review_id)
-#     if request.method == 'POST':
-#         form = ReviewForm(request.POST, instance=review)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('movie_detail', movie_id=review.movie.id)
-#     else:
-#         form = ReviewForm(instance=review)
-
-#     return render(request, 'movies/update_review.html', {'form': form, 'review': review})
+        return JsonResponse({"message": "Movie deleted successfully."}, status=200)
+    return JsonResponse({"error": "Invalid request method."}, status=405)
 
 # Eliminar una reseña
 @login_required
 def delete_review(request, review_id):
     review = get_object_or_404(Review, id=review_id)
-    movie_id = review.movie.id  # Store movie ID before deleting
-    if request.method == 'POST':
+    if request.method == 'DELETE':
         review.delete()
-        return redirect('movie_detail', movie_id=movie_id)
+        return JsonResponse({"message": "Review deleted successfully."}, status=200)
+    return JsonResponse({"error": "Invalid request method."}, status=405)
